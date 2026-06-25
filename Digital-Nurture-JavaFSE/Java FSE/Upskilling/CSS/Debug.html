@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Layout Debug</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f7fb;
+      color: #333;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    header, .sidebar, .content, footer {
+      background: #fff;
+      border: 1px solid #dcdfe6;
+      border-radius: 8px;
+      padding: 18px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    header {
+      flex: 1 1 100%;
+    }
+    .sidebar {
+      flex: 1 1 280px;
+      min-width: 220px;
+    }
+    .content {
+      flex: 2 1 580px;
+      min-width: 260px;
+    }
+    footer {
+      flex: 1 1 100%;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .card {
+      padding: 16px;
+      background: #eef2f7;
+      border-radius: 6px;
+    }
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .sidebar, .content {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Responsive Layout Debug</h1>
+      <p>Use DevTools device toolbar to simulate screen sizes and inspect styles.</p>
+    </header>
+    <aside class="sidebar">
+      <h2>Sidebar</h2>
+      <p>Check sidebar width and wrapping behavior on smaller screens.</p>
+    </aside>
+    <main class="content">
+      <h2>Main Content</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Layout Test</h3>
+          <p>Verify the flex container and media query behavior.</p>
+        </div>
+        <div class="card">
+          <h3>Network Check</h3>
+          <p>Open DevTools Network tab to confirm the external CSS file request.</p>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>Resize the viewport or use the device toolbar to validate the layout.</p>
+    </footer>
+  </div>
+</body>
+</html>

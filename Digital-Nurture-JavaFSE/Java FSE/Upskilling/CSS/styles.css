@@ -1,0 +1,88 @@
+/* Header styles */
+.header{
+    color: darkblue;
+    text-align: center;
+}
+
+/* Content styles */
+.content{
+    font-size: 18px;
+    color: black;
+}
+
+/* General styles */
+body{
+    font-family: Arial, sans-serif;
+}
+
+/* ===================================
+   General Page Styles
+   =================================== */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===================================
+   Header Styles
+   =================================== */
+.header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ===================================
+   Navigation Menu Styles
+   =================================== */
+.navbar {
+    background-color: #444;
+    padding: 10px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+/* ===================================
+   Main Content Styles
+   =================================== */
+.content {
+    padding: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* ===================================
+   Style for Main CTA Button
+   =================================== */
+.cta-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ===================================
+   CTA Button Hover Effect
+   =================================== */
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* ===================================
+   Footer Styles
+   =================================== */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}

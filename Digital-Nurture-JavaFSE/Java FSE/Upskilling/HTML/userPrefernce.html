@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Preferences</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 450px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+            text-align: center;
+        }
+
+        h2 {
+            color: #0066cc;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            margin: 15px 0;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .saveBtn {
+            background-color: green;
+            color: white;
+        }
+
+        .clearBtn {
+            background-color: red;
+            color: white;
+        }
+
+        #message {
+            margin-top: 15px;
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Event Preference</h2>
+
+    <label>Select Your Preferred Event:</label>
+
+    <select id="eventType">
+        <option value="">-- Select Event --</option>
+        <option value="Tree Plantation Drive">Tree Plantation Drive</option>
+        <option value="Blood Donation Camp">Blood Donation Camp</option>
+        <option value="Health Awareness Program">Health Awareness Program</option>
+        <option value="Cleanliness Drive">Cleanliness Drive</option>
+    </select>
+
+    <br>
+
+    <button class="saveBtn" onclick="savePreference()">
+        Save Preference
+    </button>
+
+    <button class="clearBtn" onclick="clearPreferences()">
+        Clear Preferences
+    </button>
+
+    <p id="message"></p>
+
+</div>
+
+<script>
+
+    // Load saved preference when page opens
+    window.onload = function() {
+
+        let savedEvent = localStorage.getItem("preferredEvent");
+
+        if(savedEvent) {
+            document.getElementById("eventType").value = savedEvent;
+
+            document.getElementById("message").innerHTML =
+                "Loaded saved preference: " + savedEvent;
+        }
+    };
+
+    // Save preference
+    function savePreference() {
+
+        let selectedEvent =
+            document.getElementById("eventType").value;
+
+        localStorage.setItem(
+            "preferredEvent",
+            selectedEvent
+        );
+
+        // Example session storage
+        sessionStorage.setItem(
+            "currentSessionEvent",
+            selectedEvent
+        );
+
+        document.getElementById("message").innerHTML =
+            "Preference saved successfully!";
+    }
+
+    // Clear localStorage and sessionStorage
+    function clearPreferences() {
+
+        localStorage.clear();
+        sessionStorage.clear();
+
+        document.getElementById("eventType").value = "";
+
+        document.getElementById("message").innerHTML =
+            "All preferences cleared!";
+    }
+
+</script>
+
+</body>
+</html>

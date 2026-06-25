@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Promo Video</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .container {
+            width: 700px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        video {
+            border: 2px solid #333;
+            border-radius: 8px;
+        }
+
+        #status {
+            margin-top: 10px;
+            color: green;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 90%;
+            padding: 8px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Community Event Promo Video</h2>
+
+    <!-- Video Element -->
+    <video id="promoVideo"
+           width="600"
+           controls
+           oncanplay="videoReady()">
+
+        <source src="event-promo.mp4" type="video/mp4">
+
+        Your browser does not support the video tag.
+    </video>
+
+    <p id="status"></p>
+
+    <h3>Event Registration Form</h3>
+
+    <input type="text"
+           id="name"
+           placeholder="Enter your name">
+
+    <br>
+
+    <textarea id="message"
+              rows="4"
+              placeholder="Enter your comments"></textarea>
+
+</div>
+
+<script>
+
+    let formChanged = false;
+
+    // Video Media Event
+    function videoReady() {
+        document.getElementById("status").innerHTML =
+            "✅ Video ready to play";
+    }
+
+    // Detect form changes
+    document.getElementById("name").addEventListener("input", function () {
+        formChanged = true;
+    });
+
+    document.getElementById("message").addEventListener("input", function () {
+        formChanged = true;
+    });
+
+    // Warn user before leaving page
+    window.onbeforeunload = function () {
+        if (formChanged) {
+            return "You have unsaved changes. Are you sure you want to leave?";
+        }
+    };
+
+</script>
+
+</body>
+</html>

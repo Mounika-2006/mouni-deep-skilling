@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Styling</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            text-align: center;
+            margin: 20px 0;
+            font-family: Arial, sans-serif;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 12px 15px;
+        }
+        th {
+            background-color: #4a76b2;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f6fb;
+        }
+        tr:hover {
+            background-color: #e8f0fa;
+        }
+    </style>
+</head>
+<body>
+    <h1>Events Admin Table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Event</th>
+                <th>Date</th>
+                <th>Location</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Spring Workshop</td>
+                <td>2026-05-14</td>
+                <td>Conference Hall A</td>
+                <td>Confirmed</td>
+            </tr>
+            <tr>
+                <td>Networking Meetup</td>
+                <td>2026-06-02</td>
+                <td>Outdoor Plaza</td>
+                <td>Pending</td>
+            </tr>
+            <tr>
+                <td>Training Session</td>
+                <td>2026-06-20</td>
+                <td>Room 204</td>
+                <td>Confirmed</td>
+            </tr>
+            <tr>
+                <td>Annual Review</td>
+                <td>2026-07-10</td>
+                <td>Main Auditorium</td>
+                <td>Scheduled</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Design Example</title>
+  <style>
+    :root {
+      font-size: 16px;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(180deg, #f7f9fc 0%, #ffffff 100%);
+    }
+
+    header {
+      background: #0d6efd;
+      color: #fff;
+      padding: 2vh 4vw;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2vh 4vw;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 4vh 0;
+    }
+
+    .hero-text {
+      flex: 1 1 45%;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      margin: 0 0 1rem;
+    }
+
+    .hero-text p {
+      font-size: 1rem;
+      max-width: 40rem;
+    }
+
+    .hero-image {
+      flex: 1 1 45%;
+      text-align: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 520px;
+      height: auto;
+      border-radius: 1rem;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .feature-card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .feature-card h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2vh 4vw;
+      background: #f1f5ff;
+      font-size: 0.95rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 2vh 2vw;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 0.75rem 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: left;
+      }
+
+      .hero-image,
+      .hero-text {
+        width: 100%;
+      }
+
+      .hero-image img {
+        max-width: 100%;
+      }
+
+      .hero-text h1 {
+        font-size: clamp(2rem, 8vw, 2.8rem);
+      }
+
+      .hero-text p {
+        font-size: 0.95rem;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Responsive Portal</div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <h1>Adaptive Layouts for Every Screen</h1>
+        <p>Build a responsive experience using modern CSS techniques, including media queries, flexbox, and fluid sizing with %, vw, and vh. This page adapts from desktop to tablet to mobile seamlessly.</p>
+      </div>
+      <div class="hero-image">
+        <img src="https://via.placeholder.com/600x400.png?text=Responsive+Design" alt="Responsive design illustration">
+      </div>
+    </section>
+
+    <section class="features" id="services">
+      <article class="feature-card">
+        <h3>Flexible Nav</h3>
+        <p>Navigation stacks vertically on narrow screens and spans horizontally on larger layouts for easy access.</p>
+      </article>
+      <article class="feature-card">
+        <h3>Fluid Images</h3>
+        <p>Images scale with the container using relative widths to avoid overflow and maintain a clean layout.</p>
+      </article>
+      <article class="feature-card">
+        <h3>Responsive Text</h3>
+        <p>Font sizes adjust smoothly using clamp and smaller base sizes on mobile for readability.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>Designed for phones, tablets, and desktops with responsive media queries and flexible layout techniques.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Feedback Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h2 {
+            text-align: center;
+            color: #0066cc;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 12px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        img {
+            width: 200px;
+            height: 150px;
+            border: 2px solid black;
+            margin-top: 15px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        #feeDisplay {
+            color: green;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        #charCount {
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Event Feedback Form</h2>
+
+    <!-- Phone Number -->
+    <label for="phone">Phone Number</label>
+    <input type="text"
+           id="phone"
+           placeholder="Enter 10-digit phone number"
+           onblur="validatePhone()">
+
+    <p id="phoneMsg"></p>
+
+    <!-- Event Selection -->
+    <label for="eventType">Select Event</label>
+    <select id="eventType" onchange="showFee()">
+        <option value="">--Select Event--</option>
+        <option value="100">Tree Plantation Drive</option>
+        <option value="200">Health Awareness Camp</option>
+        <option value="300">Blood Donation Camp</option>
+        <option value="400">Community Sports Event</option>
+    </select>
+
+    <p id="feeDisplay">Event Fee: ₹0</p>
+
+    <!-- Feedback -->
+    <label for="feedback">Feedback</label>
+    <textarea id="feedback"
+              rows="5"
+              placeholder="Enter your feedback..."
+              onkeyup="countCharacters()"></textarea>
+
+    <p id="charCount">Characters: 0</p>
+
+    <!-- Submit Button -->
+    <button onclick="submitFeedback()">
+        Submit Feedback
+    </button>
+
+    <!-- Image -->
+    <h3>Double Click the Image to Enlarge</h3>
+
+    <img src="https://via.placeholder.com/200x150"
+         id="eventImage"
+         alt="Event Image"
+         ondblclick="enlargeImage()">
+
+</div>
+
+<script>
+
+    /* onblur Event */
+    function validatePhone() {
+        let phone = document.getElementById("phone").value;
+        let message = document.getElementById("phoneMsg");
+
+        let pattern = /^[0-9]{10}$/;
+
+        if(pattern.test(phone)) {
+            message.innerHTML = "Valid Phone Number";
+            message.style.color = "green";
+        } else {
+            message.innerHTML = "Invalid Phone Number";
+            message.style.color = "red";
+        }
+    }
+
+    /* onchange Event */
+    function showFee() {
+        let fee = document.getElementById("eventType").value;
+
+        document.getElementById("feeDisplay").innerHTML =
+            "Event Fee: ₹" + fee;
+    }
+
+    /* onclick Event */
+    function submitFeedback() {
+        alert("Thank you! Your feedback has been submitted successfully.");
+    }
+
+    /* ondblclick Event */
+    function enlargeImage() {
+        let image = document.getElementById("eventImage");
+
+        if(image.style.width === "400px") {
+            image.style.width = "200px";
+            image.style.height = "150px";
+        }
+        else {
+            image.style.width = "400px";
+            image.style.height = "300px";
+        }
+    }
+
+    /* Keyboard Event */
+    function countCharacters() {
+        let text = document.getElementById("feedback").value;
+
+        document.getElementById("charCount").innerHTML =
+            "Characters: " + text.length;
+    }
+
+</script>
+
+</body>
+</html>

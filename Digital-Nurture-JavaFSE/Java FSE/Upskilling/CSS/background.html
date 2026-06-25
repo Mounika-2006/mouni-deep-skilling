@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Council Portal Theme</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background-color: #0f172a; /* fallback color */
+      background-image: url('https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: rgba(255, 255, 255, 0.92);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .overlay {
+      background: rgba(15, 23, 42, 0.72);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, rgba(30, 64, 175, 0.95), rgba(16, 185, 129, 0.95));
+      border-radius: 16px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      color: #e2e8f0;
+    }
+
+    header p {
+      margin: 12px auto 0;
+      max-width: 740px;
+      color: rgba(226, 232, 240, 0.9);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    section {
+      margin-bottom: 24px;
+      padding: 24px;
+      background: rgba(15, 23, 42, 0.84);
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      border-radius: 14px;
+      backdrop-filter: blur(12px);
+    }
+
+    section h2 {
+      margin-top: 0;
+      font-size: 1.9rem;
+      background: linear-gradient(90deg, #2563eb, #8b5cf6);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    section p {
+      color: rgba(226, 232, 240, 0.92);
+      line-height: 1.75;
+    }
+
+    .highlight {
+      color: #38bdf8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 18px 10px;
+      color: rgba(148, 163, 184, 0.95);
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <header>
+      <h1>City Council Portal</h1>
+      <p>Consistent branding with strong, accessible visuals using HEX and RGBA colors, a background image with a fallback color, and gradient section headers.</p>
+    </header>
+
+    <section>
+      <h2>Community Focus</h2>
+      <p>The portal uses <span class="highlight">#0f172a</span> as a reliable fallback to the background image, while text is softened with <span class="highlight">rgba(255, 255, 255, 0.92)</span> for improved readability over the scenic city backdrop.</p>
+    </section>
+
+    <section>
+      <h2>Branding and Design</h2>
+      <p>Section headers feature a strong gradient with <code>background: linear-gradient(90deg, #2563eb, #8b5cf6)</code> to reflect the council’s dynamic civic identity and to ensure visual hierarchy throughout the theme.</p>
+    </section>
+
+    <footer>
+      Designed for the council portal with modern color and background styling.
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Box Model & Layout Control</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background: #f0f4f8;
+      color: #333;
+    }
+
+    h1,
+    h2 {
+      color: #1f3a72;
+    }
+
+    .eventCard {
+      border: 2px solid #2563eb;
+      padding: 18px;
+      margin: 20px 0;
+      border-radius: 10px;
+      background: #ffffff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .eventCard h3 {
+      margin-top: 0;
+    }
+
+    .eventCard p {
+      margin: 0;
+    }
+
+    form {
+      margin: 20px 0;
+      padding: 16px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      border: 1px solid #94a3b8;
+      border-radius: 6px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 3px solid #60a5fa;
+      outline-offset: 4px;
+      border-color: #3b82f6;
+      background: #eef2ff;
+    }
+
+    .demo-box {
+      padding: 14px;
+      border: 1px dashed #64748b;
+      background: #eef2ff;
+      margin: 12px 0;
+    }
+
+    .hidden-demo {
+      visibility: hidden;
+    }
+
+    .none-demo {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Box Model & Layout Control</h1>
+  <p>Use developer tools to inspect and tweak box model properties. Adjust margin, padding, border, and outline to control spacing and focus styles.</p>
+
+  <section class="eventCard">
+    <h2>Event Card</h2>
+    <p>Border, padding, and margin are applied to this box. This helps separate the card from surrounding content and gives it a clear structure.</p>
+  </section>
+
+  <section class="eventCard">
+    <h2>Another Event Card</h2>
+    <p>Each card uses the same box model settings so content is easier to read and visually balanced.</p>
+  </section>
+
+  <section>
+    <h2>Form Fields with Outline</h2>
+    <form>
+      <label for="name">Name</label>
+      <input id="name" type="text" placeholder="Enter your name" />
+
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="Enter your email" />
+
+      <label for="event">Event Type</label>
+      <select id="event">
+        <option value="conference">Conference</option>
+        <option value="webinar">Webinar</option>
+        <option value="workshop">Workshop</option>
+      </select>
+
+      <label for="notes">Notes</label>
+      <textarea id="notes" rows="4" placeholder="Additional details"></textarea>
+    </form>
+    <p>Click or tab into a field to see the outline highlight the selected input.</p>
+  </section>
+
+  <section>
+    <h2>Visibility Comparison</h2>
+    <p>Compare how <code>visibility: hidden</code> leaves space reserved, while <code>display: none</code> removes the element from layout entirely.</p>
+    <div class="demo-box">
+      <strong>visibility: hidden</strong>
+      <div class="demo-box hidden-demo">This content is hidden but still takes up space.</div>
+    </div>
+    <div class="demo-box">
+      <strong>display: none</strong>
+      <div class="demo-box none-demo">This content is not visible and does not take up space.</div>
+      <p>Notice the hidden element keeps its place, while the display-none element is removed from the layout.</p>
+    </div>
+  </section>
+</body>
+</html>

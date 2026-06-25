@@ -1,0 +1,63 @@
+```html
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Selectors Playground</title>
+	<style>
+		/* Universal selector: reset margin/padding */
+		* { margin: 0; padding: 0; box-sizing: border-box; }
+
+		/* Element selector: style all divs */
+		div { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+
+		/* ID selector for the banner */
+		#mainHeader {
+			background: linear-gradient(90deg,#4b6cb7,#182848);
+			color: #fff;
+			padding: 1.5rem;
+			text-align: center;
+		}
+
+		/* Class selector for event containers */
+		.eventCard {
+			background: #fff;
+			border: 1px solid #e0e0e0;
+			border-radius: 8px;
+			padding: 1rem;
+			margin: 1rem auto;
+			max-width: 640px;
+			box-shadow: 0 2px 6px rgba(16,24,40,0.06);
+		}
+
+		/* Grouping selector for h3 and p */
+		h3, p {
+			color: #333;
+			line-height: 1.4;
+		}
+
+		/* Small utilities */
+		p { margin-top: 0.5rem; }
+		h3 { margin-bottom: 0.25rem; }
+	</style>
+</head>
+<body>
+	<header id="mainHeader">
+		<h1>Selectors Playground</h1>
+	</header>
+
+	<main>
+		<div class="eventCard">
+			<h3>Community Meetup</h3>
+			<p>Join us for talks and networking.</p>
+		</div>
+
+		<div class="eventCard">
+			<h3>Workshop: CSS Selectors</h3>
+			<p>Hands-on session covering IDs, classes, and grouping selectors.</p>
+		</div>
+	</main>
+</body>
+</html>
+```
